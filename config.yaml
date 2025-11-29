@@ -1,0 +1,49 @@
+data:
+  raw_dir: "D:/ids_ml_course/data/raw"
+  processed_dir: "D:/ids_ml_course/data/processed"
+  dataset_name: "CIC-IDS2017"
+
+models:
+  save_dir: "models"
+  random_forest_path: "models/random_forest_model.pkl"
+  neural_network_path: "models/neural_network_model.h5"
+  scaler_path: "models/scaler.pkl"
+
+preprocessing:
+  test_size: 0.2
+  validation_size: 0.2
+  random_state: 42
+  balance_method: "smote"
+  
+random_forest:
+  n_estimators: [100, 150, 200]  # Уменьшено: было [100, 200, 300] для уменьшения сложности
+  max_depth: [5, 8, 10]  # Сильно уменьшено: было [10, 15, 20] для сильной регуляризации
+  min_samples_split: [20, 30, 50]  # Сильно увеличено: было [5, 10, 20] для сильной регуляризации
+  min_samples_leaf: [10, 15, 20]  # Сильно увеличено: было [2, 4, 8] для сильной регуляризации
+  max_features: ['sqrt', 'log2']  # Добавлено: ограничение признаков для регуляризации
+  random_state: 42
+  n_jobs: -1
+  cv_folds: 5
+
+neural_network:
+  epochs: 50
+  batch_size: 256
+  learning_rate: 0.001
+  dropout_rate: 0.3
+  hidden_layer_1: 128
+  hidden_layer_2: 64
+  patience: 10
+  validation_split: 0.2
+
+realtime:
+  interface: "eth0"
+  log_file: "results/realtime_alerts.log"
+  window_size: 30
+  alert_threshold: 0.7
+  simulation_mode: true
+
+# Results
+results:
+  save_dir: "results"
+  figures_dir: "results/figures"
+
