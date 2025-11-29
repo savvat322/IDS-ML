@@ -1,0 +1,49 @@
+{
+  "model_type": "Neural Network (MLP)",
+  "architecture": {
+    "input_dim": 102,
+    "hidden_layer_1": 128,
+    "hidden_layer_2": 64,
+    "dropout_rate": 0.3,
+    "output_dim": 1
+  },
+  "training_params": {
+    "epochs": 50,
+    "batch_size": 256,
+    "learning_rate": 0.001
+  },
+  "training_time": 377.6749360561371,
+  "final_metrics": {
+    "loss": 0.0011544260196387768,
+    "accuracy": 0.9998736381530762,
+    "precision": 0.9996889233589172,
+    "recall": 0.9997958540916443,
+    "classification_report": {
+      "BENIGN": {
+        "precision": 0.9999336485553553,
+        "recall": 0.9998988965506347,
+        "f1-score": 0.9999162722510442,
+        "support": 633015.0
+      },
+      "ATTACK": {
+        "precision": 0.9996889126525057,
+        "recall": 0.9997958270947168,
+        "f1-score": 0.9997423670152004,
+        "support": 205708.0
+      },
+      "accuracy": 0.9998736173921545,
+      "macro avg": {
+        "precision": 0.9998112806039305,
+        "recall": 0.9998473618226758,
+        "f1-score": 0.9998293196331223,
+        "support": 838723.0
+      },
+      "weighted avg": {
+        "precision": 0.9998736238116634,
+        "recall": 0.9998736173921545,
+        "f1-score": 0.9998736196729523,
+        "support": 838723.0
+      }
+    }
+  }
+}
